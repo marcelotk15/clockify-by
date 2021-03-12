@@ -1,0 +1,26 @@
+{
+  "name": "ClockifyBy",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "This extension was created with the awesome extensionizr.com",
+  "homepage_url": "http://codeby.com.br",
+  "icons": {
+    "128": "icons/logo@128.png"
+  },
+  "default_locale": "en",
+  "browser_action": {
+    "default_icon": "icons/logo@128.png"
+  },
+  "background": {
+		"scripts": [
+			"src/background.js"
+		]
+	},
+  "content_scripts": [
+    {
+      "matches": ["https://clockify.me/tracker/*"],
+      "js": ["js/moment.min.js", "src/index.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
